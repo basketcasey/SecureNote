@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">SecureNote</string>
+    <string name="action_settings">Settings</string>
+    <string name="welcome">Welcome to Secure Notepad</string>
+    <string name="welcome_instruct1">Please log in to continue.</string>
+    <string name="welcome_instruct2">Please create a password to continue.</string>
+    <string name="enter_new_password">Enter a new password</string>
+    <string name="enter_old_password">Enter current password</string>
+    <string name="renter_new_password">Re-enter the new password</string>
+    <string name="login_password">Enter login password</string>
+    <string name="password_hint">*****</string>
+    <string name="save">Save</string>
+    <string name="delete">Delete</string>
+    <string name="group">Group:</string>
+    <string name="title">Title:</string>
+    <string name="description">Description:</string>
+    <string name="creategroup">Create New Group</string>
+    <string name="updategroup">Update Group</string>
+    <string name="deletegroup">Delete Group</string>
+    <string name="name">Name:</string>
+    <string name="submit">Submit</string>
+    <string name="groupinstruction">Edit existing group name to change</string>
+    <string name="title_activity_note_list">NoteList</string>
+    <string name="notes">Notes:</string>
+    <string name="addnote">Add Note</string>
+    <string name="groupmgr">Group Manager</string>
+    <string name="title_activity_group_manager">Group Manager</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_note_details">Note Details</string>
+    <string name="wipeall">Wipe all Data</string>
+    <string name="deleteall">Delete All Data?</string>
+    <string name="confGrpDelete">Deleting a group deletes associated notes.  Continue deletion?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="cancel">Cancel</string>
+    <string name="changePassword">Change Password</string>
+
+</resources>

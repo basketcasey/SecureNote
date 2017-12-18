@@ -1,0 +1,126 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/Beige" >
+
+    <LinearLayout
+        android:id="@+id/top_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/bottom_layout"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical" >
+
+		<RelativeLayout
+        	android:layout_width="match_parent"
+        	android:layout_height="wrap_content" >  
+		    <TextView
+		        android:id="@+id/group_label"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_marginTop="5dp"
+		        android:background="#00000000"
+		        android:clickable="false"
+		        android:focusable="false"
+		        android:focusableInTouchMode="false"
+		        android:textAppearance="?android:attr/textAppearanceMedium"
+		        android:longClickable="false"
+		        android:text="@string/group"
+		        android:textColor="@color/DarkRed" />
+		
+			<Spinner
+			    android:id="@+id/group_spinner"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+		        android:layout_alignBaseline="@id/group_label"
+			    android:layout_toRightOf="@id/group_label"
+			    android:background="#00000000"
+			    android:textColor="@color/DarkRed"
+			    android:drawSelectorOnTop="true"
+			    android:textAppearance="?android:attr/textAppearanceMedium" />	
+    	</RelativeLayout>
+	
+		<TextView
+	        android:id="@+id/title_label"
+		    android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:textColor="@color/DarkRed"
+	        android:text="@string/title"
+	        android:textAppearance="?android:attr/textAppearanceSmall"
+	        android:layout_marginTop="5dp" />
+	
+		<EditText
+		    android:id="@+id/title_edittext"
+		    android:layout_width="match_parent"
+		    android:layout_height="35dp"
+		    android:layout_margin="5dp"
+		    android:background="@drawable/rounded_corners"
+		    android:ems="10"
+		    android:paddingLeft="5dp"
+		    android:textAppearance="?android:attr/textAppearanceSmall" />
+	   
+		<TextView
+	        android:id="@+id/desc_label"
+		    android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:textColor="@color/DarkRed"
+	        android:text="@string/description"
+	        android:textAppearance="?android:attr/textAppearanceSmall"
+	        android:layout_marginTop="5dp" />
+	     
+		<ScrollView
+		    android:id="@+id/ScrollView01"
+		    android:layout_width="match_parent"
+		    android:layout_height="match_parent"
+		    android:layout_margin="5dp"
+		    android:fillViewport="true" >
+	
+	        <EditText
+	            android:id="@+id/desc_edittext"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:autoLink="web|email|phone"
+	            android:background="@drawable/rounded_corners"
+	            android:gravity="top"
+	            android:linksClickable="false"
+	            android:padding="5dp"
+	            android:textAppearance="?android:attr/textAppearanceSmall" />
+	
+	    </ScrollView>
+	</LinearLayout>
+
+	<LinearLayout
+	    android:id="@+id/bottom_layout"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_alignParentBottom="true"
+	    android:orientation="vertical" >
+
+	    <Button
+	        android:id="@+id/btn_save"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:textAppearance="?android:attr/textAppearanceSmall"
+	        android:layout_marginBottom="5dp"	   
+	        android:layout_marginLeft="100dp"
+	    	android:layout_marginRight="100dp"
+	    	android:layout_marginTop="15dp"
+	    	android:background="@drawable/btn_selector"
+	    	android:minHeight="30dp"
+	        android:text="@string/save" />
+	        
+	    <Button
+	        android:id="@+id/btn_delete"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_marginBottom="5dp"
+	        android:layout_marginLeft="100dp"
+	        android:layout_marginRight="100dp"
+	        android:background="@drawable/btn_selector"
+	        android:minHeight="30dp"
+	        android:text="@string/delete"
+	        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    </LinearLayout>
+</RelativeLayout>

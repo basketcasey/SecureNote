@@ -1,0 +1,26 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.basketcasey.securenote.NoteList" >
+
+    <item
+        android:id="@+id/action_addnote"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/addnote"/>
+    <item
+        android:id="@+id/action_groupmgr"
+        android:orderInCategory="200"
+        android:showAsAction="never"
+        android:title="@string/groupmgr"/>
+    <item
+        android:id="@+id/action_wipeall"
+        android:orderInCategory="300"
+        android:showAsAction="never"
+        android:title="@string/wipeall"/>
+    <item
+        android:id="@+id/action_changePassword"
+        android:orderInCategory="400"
+        android:showAsAction="never"
+        android:title="@string/changePassword"/>
+
+</menu>
