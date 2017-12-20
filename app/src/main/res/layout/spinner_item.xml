@@ -3,5 +3,7 @@
           android:id="@+id/spinnerTarget"
           android:layout_width="fill_parent"
           android:layout_height="wrap_content"
+          android:background="@color/Beige"
+          style="?android:attr/spinnerDropDownItemStyle"
           android:textAppearance="?android:attr/textAppearanceMedium"
-/>
+          android:textColor="@color/DarkBlue"/>

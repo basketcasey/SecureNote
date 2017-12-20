@@ -6,21 +6,25 @@
         android:id="@+id/action_addnote"
         android:orderInCategory="100"
         android:showAsAction="never"
+        android:textColor="@color/DarkBlue"
         android:title="@string/addnote"/>
     <item
         android:id="@+id/action_groupmgr"
         android:orderInCategory="200"
         android:showAsAction="never"
+        android:textColor="@color/DarkBlue"
         android:title="@string/groupmgr"/>
     <item
         android:id="@+id/action_wipeall"
         android:orderInCategory="300"
         android:showAsAction="never"
+        android:textColor="@color/DarkBlue"
         android:title="@string/wipeall"/>
     <item
         android:id="@+id/action_changePassword"
         android:orderInCategory="400"
         android:showAsAction="never"
+        android:textColor="@color/DarkBlue"
         android:title="@string/changePassword"/>
 
 </menu>

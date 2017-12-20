@@ -82,7 +82,7 @@ public class NoteList extends Activity {
 
 		// Populate the group spinner
         groupSpinner = (Spinner) findViewById(R.id.group_spinner);
-        groupDataAdapter = new ArrayAdapter(this, R.layout.spinner_item, groupList);
+        groupDataAdapter = new ArrayAdapter(this, R.layout.group_spinner_item, groupList);
         groupDataAdapter.setDropDownViewResource(R.layout.spinner_item);
         groupSpinner.setAdapter(groupDataAdapter);
 
@@ -139,7 +139,7 @@ public class NoteList extends Activity {
 		// Populate the listview spinner with notes
 		noteListView = (ListView) findViewById(R.id.notes_listview);
         ArrayAdapter<CharSequence> noteDataAdapter =  new ArrayAdapter(this, 
-                android.R.layout.simple_list_item_1, noteList);
+                R.layout.simple_list_item, noteList);
         noteListView.setAdapter(noteDataAdapter);
 	}
 	

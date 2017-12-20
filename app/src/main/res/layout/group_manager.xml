@@ -29,7 +29,7 @@
 	        android:layout_alignBaseline="@id/group_label"
 		    android:layout_toRightOf="@id/group_label"
 		    android:background="#00000000"
-		    android:textColor="@color/DarkRed"
+		    android:textColor="@color/DarkBlue"
 		    android:drawSelectorOnTop="true"
 		    android:textAppearance="?android:attr/textAppearanceMedium" />
 		
@@ -44,14 +44,15 @@
         android:text="@string/name"
         android:textAppearance="?android:attr/textAppearanceSmall" />
 
-    <EditText
-        android:id="@+id/groupname_edittext"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:background="@drawable/rounded_corners"
-        android:paddingLeft="5dp"
-        android:textAppearance="?android:attr/textAppearanceSmall" />
+	<EditText
+			android:id="@+id/groupname_edittext"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_margin="5dp"
+			android:background="@drawable/rounded_corners"
+			android:paddingLeft="5dp"
+			android:textAppearance="?android:attr/textAppearanceSmall"
+			android:textColor="@color/DarkBlue"/>
     
     <TextView
         android:id="@+id/group_instruction"
@@ -72,6 +73,7 @@
 	    android:layout_marginTop="15dp"
 	    android:background="@drawable/btn_selector"
 	    android:minHeight="30dp"
+        android:textColor="@color/DarkBlue"
         android:text="@string/creategroup"
         android:textAppearance="?android:attr/textAppearanceSmall" />
     
@@ -85,6 +87,7 @@
 	    android:layout_marginTop="15dp"
 	    android:background="@drawable/btn_selector"
 	    android:minHeight="30dp"
+        android:textColor="@color/DarkBlue"
         android:text="@string/updategroup" />
         
     <Button
@@ -97,6 +100,7 @@
 	    android:layout_marginTop="15dp"
 	    android:background="@drawable/btn_selector"
 	    android:minHeight="30dp"
+		android:textColor="@color/DarkBlue"
         android:layout_marginBottom="5dp"
         android:text="@string/deletegroup" />
     

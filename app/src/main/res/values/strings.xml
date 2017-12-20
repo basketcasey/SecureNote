@@ -36,5 +36,6 @@
     <string name="no">No</string>
     <string name="cancel">Cancel</string>
     <string name="changePassword">Change Password</string>
+    <string name="read_note">Read Note Aloud</string>
 
 </resources>

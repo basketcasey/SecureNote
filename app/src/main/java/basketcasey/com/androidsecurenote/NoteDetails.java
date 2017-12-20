@@ -5,9 +5,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.util.Log;
+import java.util.Locale;
+
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager.LayoutParams;
 import android.widget.*;
+import android.speech.tts.TextToSpeech;
 import basketcasey.com.androidsecurenote.cryptography.CryptoStore;
 import basketcasey.com.androidsecurenote.cryptography.SymmetricKeyLib;
 import basketcasey.com.androidsecurenote.database.CustomGroupComparator;
@@ -24,6 +29,7 @@ public class NoteDetails extends Activity {
 	private NotesDataSource datasource;
 	private CryptoStore cryptoStore = null;
 	private static final String LOG_TAG = "NoteDetails";
+	private TextToSpeech tts;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +38,16 @@ public class NoteDetails extends Activity {
 		
 		// Block Android for taking pictures of the app when backgrounded, can leak sensitive info
 	    getWindow().setFlags(LayoutParams.FLAG_SECURE, LayoutParams.FLAG_SECURE);
-	    
+
+        // Setup Speech Synth
+        tts=new TextToSpeech(NoteDetails.this, new TextToSpeech.OnInitListener() {
+
+            @Override
+            public void onInit(int status) {
+				tts.setLanguage(Locale.getDefault());
+            }
+        });
+
         // Get noteID passed in with intent - determines if note is being added or edited
         long nID = 0;
         long gID = 0;
@@ -196,6 +211,25 @@ public class NoteDetails extends Activity {
         });
 	}
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.note_details, menu);
+        return true;
+    }
+
+    private void ConvertTextToSpeech() {
+        EditText descObj = (EditText) findViewById(R.id.desc_edittext);
+        String text = descObj.getText().toString();
+        String utteranceId = this.hashCode() + "";
+        if (text == null || "".equals(text)) {
+            text = "Content not available";
+            tts.speak(text, TextToSpeech.QUEUE_FLUSH, null, utteranceId);
+        } else {
+            tts.speak(text, TextToSpeech.QUEUE_FLUSH, null, utteranceId);
+        }
+    }
+
 	// Launches main activity with the selected group parameter for display sorting
 	public void openNoteMainActivity(long gID) {
 		Intent intent = new Intent(this, NoteList.class);
@@ -216,4 +250,33 @@ public class NoteDetails extends Activity {
 		Log.d("SecureNote", "Back Pressed" + gID);
 		openNoteMainActivity(gID);
 	}
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        switch (id) {
+            case R.id.action_readnote:
+                ConvertTextToSpeech();
+                return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+    
+    @Override
+    protected void onPause() {
+        if(tts != null){
+            tts.stop();
+            tts.shutdown();
+        }
+        super.onPause();
+    }
+
+    public void onDestroy() {
+        if (tts != null) {
+            tts.stop();
+            tts.shutdown();
+        }
+        super.onDestroy();
+    }
 }

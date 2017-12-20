@@ -63,9 +63,9 @@ public class GroupManager extends Activity {
 		
 		// Populate the group spinner
         Spinner groupSpinner = (Spinner) findViewById(R.id.group_spinner);
-        ArrayAdapter<CharSequence> groupDataAdapter =  new ArrayAdapter(this, 
-                android.R.layout.simple_spinner_item, groupList);
-        groupDataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        ArrayAdapter<CharSequence> groupDataAdapter =  new ArrayAdapter(this,
+                R.layout.group_spinner_item, groupList);
+        groupDataAdapter.setDropDownViewResource(R.layout.spinner_item);
         groupSpinner.setAdapter(groupDataAdapter);
  
         // Create event handler that changes title on selection of an existing group
